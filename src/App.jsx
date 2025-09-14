@@ -3,6 +3,8 @@ import LoadingScreen from './components/LoadingScreen'
 import PageTransition from './components/PageTransition'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
+import AboutSection from './components/AboutSection'
+import ProjectsSection from './components/ProjectsSection'
 import './App.css'
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
       <div className={`main-content ${showContent ? 'content-visible' : ''}`}>
         <Navbar />
         <HeroSection showAnimation={showContent} />
+        <AboutSection />
+        <ProjectsSection />
       </div>
     </div>
   )

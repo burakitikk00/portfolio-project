@@ -16,11 +16,11 @@ const LoadingScreen = ({ isLoading }) => {
                     <span className="loading-letter">R</span>
                     <span className="loading-letter">A</span>
                     <span className="loading-letter">K</span>
-                    <span className="loading-slash">//</span>
-                    <span className="loading-letter">İ</span>
-                    <span className="loading-letter">T</span>
-                    <span className="loading-letter">İ</span>
-                    <span className="loading-letter">K</span>
+                    <span className="loading-slash"> </span>
+                    <span className="loading-slash">İ</span>
+                    <span className="loading-slash">T</span>
+                    <span className="loading-slash">İ</span>
+                    <span className="loading-slash">K</span>
                 </div>
             </div>
         </div>

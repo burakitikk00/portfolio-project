@@ -1,0 +1,153 @@
+/* About Section Styles */
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Left Side Styles */
+.about-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #00f5ff;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Right Side Styles */
+.about-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2rem;
+}
+
+.about-description {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0;
+    min-height: 3em;
+    /* Reserve space for text */
+}
+
+/* Typewriter Font */
+.typewriter-font {
+    font-family: 'Courier New', 'Lucida Console', Monaco, monospace;
+    font-weight: 400;
+}
+
+/* Cursor Animation */
+.cursor {
+    color: #00f5ff;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.cursor.visible {
+    opacity: 1;
+}
+
+/* Slide Animations */
+.slide-from-left {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+.delay-3 {
+    transition-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .about-description {
+        font-size: 1.2rem;
+    }
+
+    .about-right {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
+    }
+
+    .about-container {
+        padding: 0 1rem;
+    }
+}
+
+/* Background Elements */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(0, 168, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 168, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
