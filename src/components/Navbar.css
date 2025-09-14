@@ -1,0 +1,220 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    position: relative;
+}
+
+.logo-first {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+.logo-separator {
+    color: #00f5ff;
+    margin: 0 0.3rem;
+    font-weight: 300;
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+    animation: separatorPulse 2s ease-in-out infinite;
+}
+
+.logo-last {
+    background: linear-gradient(135deg, #00f5ff 0%, #0099cc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: logoGlow 3s ease-in-out infinite alternate-reverse;
+}
+
+.logo-subtitle {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: #888;
+    letter-spacing: 0.15em;
+    margin-top: -2px;
+    opacity: 0.8;
+    animation: subtitleFade 4s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+    0% {
+        filter: brightness(1);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+
+    100% {
+        filter: brightness(1.2);
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+}
+
+@keyframes separatorPulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+        transform: scale(1);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(0, 245, 255, 0.8), 0 0 30px rgba(0, 245, 255, 0.4);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes subtitleFade {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+}
+
+.logo-text {
+    letter-spacing: 0.1em;
+}
+
+.logo-slash {
+    color: #00f5ff;
+    margin: 0 0.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: #00f5ff;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00f5ff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 3rem;
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu-active {
+        left: 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}

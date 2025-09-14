@@ -1,0 +1,1 @@
+// bu proje de adımın projelerimin özgeçmişimin olduğu bir site olacak  benim cv gibi oalcak ama daha gösterişli olması gerekiyor. site çok gelişmiş gözükmeli animasyonlar vb şeyler çok akitf çalışmalı bu sitedeki şablonun aynısnı istiyorum .https://portolio-template.webflow.io/
